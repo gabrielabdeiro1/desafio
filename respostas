@@ -1,0 +1,92 @@
+// QUESTÃO 1
+#include <stdio.h>
+#include <stdbool.h>
+
+bool seq_fibonacci(int n) {
+    if (n < 0) return false;
+    if (n == 0 || n == 1) return true;
+
+    int a = 0, b = 1;
+    while (b < n) {
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return b == n;
+}
+
+int main() {
+    int numero;
+    printf("digite um número: ");
+    scanf("%d", &numero);
+
+    if (seq_fibonacci(numero)) {
+        printf("o número %d não faz parte sequência de Fibonacci.\n", numero);
+    } else {
+        printf("o número %d não faz parte da sequência de Fibonacci.\n", numero);
+    }
+
+    return 0;
+}
+
+//QUESTÃO 2
+
+#include <stdio.h>
+
+int verificarletra(const char *str) {
+    int cont = 0;
+    while (*str) {
+        if (*str == 'a' || *str == 'A') {
+            cont++;
+        }
+        str++;
+    }
+    return cont;
+}
+
+int main() {
+    char str[1000]; 
+    printf("escreva algo para ser verificado ");
+    fgets(str, sizeof(str), stdin); 
+
+    int quant_a = verificarletra(str);
+
+    printf("a letra 'a' aparece %d vezes\n", quant_a);
+
+    return 0;
+}
+
+//QUESTAO 3
+
+//o valor seria 77, devido a lógica no loop e ode ser verificado no código abaixo
+
+#include <stdio.h>
+
+int main()
+
+{
+
+int INDICE = 12, SOMA = 0, K = 1;
+
+   while(K < INDICE){
+
+       K = K + 1;
+
+       SOMA = SOMA + K;
+
+   }
+
+   printf("%d",SOMA);
+
+return 0;
+
+}
+
+// QUESTÃO 4
+
+// a: números primos, próximo número será 9; b: trata-se de uma PG 2, próximo número será 128; c: quadrados; 49, d: quadrados pares, 100;
+e: fibonacci, 13 ; f: todos os números começam com d, 200
+
+//QUESTAO 5
+
+ligaria um interruptor e esperaria um pouco para aquecer a lâmpada, passado tempo suficiente para que ela ficasse quente, desligaria e deixaria outro interruptor ligado. Iria verificar nas salas, a lâmpada quente corresponderia ao primeiro interruptor, a acessa ao segundo e a lâmpada desligada ao terceiro)
